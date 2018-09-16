@@ -26,4 +26,15 @@ describe('redefine statics', () => {
     expect(ParentObj.staticMethodTwo).toEqual(undefined);
     expect(ParentObj.nonStaticMethod).toEqual(undefined);
   });
+
+  test('does not overwrite ParentObj\'s static method', () => {
+    class ParentObj {
+      static staticMethodTwo () {}
+    }
+
+    redefineStatics(ParentObj, ChildObj);
+
+    expect(ParentObj.staticMethod).toEqual(ChildObj.staticMethod);
+    expect(ParentObj.staticMethodTwo).toEqual(ParentObj.staticMethodTwo);
+  });
 });
