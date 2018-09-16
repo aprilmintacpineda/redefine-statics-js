@@ -1,0 +1,50 @@
+{
+  "name": "redefine-statics-js",
+  "version": "1.0.0",
+  "description": "Utility function that copies-over all static methods of a child object to the parent object.",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^9.0.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-minify": "^0.4.3",
+    "eslint": "^5.6.0",
+    "husky": "^0.14.3",
+    "jest": "^23.6.0",
+    "lint-staged": "^7.2.2",
+    "prettier": "^1.14.2"
+  },
+  "scripts": {
+    "test": "npm run build && jest --env=node --coverage",
+    "build": "node build.js && node build-playground.js",
+    "playground": "npm run build && node playground/build/index.js",
+    "lint": "prettier \"src/index.js\" \"playground/index.js\" \"__tests__/**/*.js\" --write && eslint \"src/index.js\" \"playground/index.js\" --fix",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "src/**/*.js": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ],
+    "playground/index.js": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gh_personal:aprilmintacpineda/redefine-statics-js.git"
+  },
+  "keywords": [
+    "static-properties",
+    "hoc",
+    "higher-order-components"
+  ],
+  "author": "April Mintac Pineda",
+  "license": "MIT"
+}
