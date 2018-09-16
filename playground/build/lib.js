@@ -1,10 +1,13 @@
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = redefineStatics;
 /** @format */
+
+// built-in statics shouldn't be copied over
+var builtInStatics = ['name', 'length', 'prototype', 'caller', 'callee', 'arguments', 'arity'];
 
 /**
  * @param {Class} The wrapper class where the static methods would be copied to.
@@ -15,7 +18,7 @@ function redefineStatics(WrapperClass, WrappedClass, blockList) {
   var staticKeys = Object.getOwnPropertyNames(WrappedClass);
 
   for (var a = 0; a < staticKeys.length; a++) {
-    if ((!blockList || !blockList.includes(staticKeys[a])) && WrapperClass[staticKeys[a]] === undefined) {
+    if (!builtInStatics.includes(WrapperClass[staticKeys[a]]) && (!blockList || !blockList.includes(staticKeys[a])) && WrapperClass[staticKeys[a]] === undefined) {
       WrapperClass[staticKeys[a]] = WrappedClass[staticKeys[a]];
     }
   }
