@@ -13,7 +13,7 @@ export default function redefineStatics (WrapperClass, WrappedClass, blockList) 
 
   for (let a = 0; a < staticKeys.length; a++) {
     if (
-      !builtInStatics.includes(WrapperClass[staticKeys[a]]) &&
+      !builtInStatics.includes(staticKeys[a]) &&
       (!blockList || !blockList.includes(staticKeys[a])) &&
       WrapperClass[staticKeys[a]] === undefined
     ) {
