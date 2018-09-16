@@ -43,7 +43,8 @@
   "keywords": [
     "static-properties",
     "hoc",
-    "higher-order-components"
+    "higher-order-components",
+    "higher-order-functions"
   ],
   "author": "April Mintac Pineda",
   "license": "MIT"
