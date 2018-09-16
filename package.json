@@ -3,9 +3,12 @@
   "version": "1.0.1",
   "description": "Utility function that copies-over all static methods of a child object to the parent object.",
   "main": "lib/index.js",
-  "directories": {
-    "lib": "lib"
-  },
+  "files": [
+    "lib/*",
+    "README.md",
+    "LICENSE",
+    "package.json"
+  ],
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-eslint": "^9.0.0",
