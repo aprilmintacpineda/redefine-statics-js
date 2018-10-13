@@ -11,4 +11,7 @@ class ChildComponent {
   nonStaticMethod () {}
 }
 
-console.log(redefineStatics(ParentComponent, ChildComponent));
+redefineStatics(ParentComponent, ChildComponent);
+
+// eslint-disable-next-line
+console.log(ParentComponent);

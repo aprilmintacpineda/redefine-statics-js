@@ -39,4 +39,7 @@ var ChildComponent = function () {
   return ChildComponent;
 }();
 
-console.log((0, _lib2.default)(ParentComponent, ChildComponent));
+(0, _lib2.default)(ParentComponent, ChildComponent);
+
+// eslint-disable-next-line
+console.log(ParentComponent);

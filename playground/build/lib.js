@@ -22,6 +22,4 @@ function redefineStatics(WrapperClass, WrappedClass, blockList) {
       WrapperClass[staticKeys[a]] = WrappedClass[staticKeys[a]];
     }
   }
-
-  return WrapperClass;
 }
