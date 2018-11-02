@@ -25,7 +25,8 @@
     "build": "node build.js && node build-playground.js",
     "playground": "npm run build && node playground/build/index.js",
     "lint": "prettier \"src/index.js\" \"playground/index.js\" \"__tests__/**/*.js\" --write && eslint \"src/index.js\" \"playground/index.js\" --fix",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "reinstallNodeModules": "rm -rf node_modules package-lock.json && npm i"
   },
   "lint-staged": {
     "src/**/*.js": [
