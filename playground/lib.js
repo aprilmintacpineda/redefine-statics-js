@@ -18,7 +18,7 @@ function redefineStatics(WrapperClass, WrappedClass, blockList) {
   var staticKeys = Object.getOwnPropertyNames(WrappedClass);
 
   for (var a = 0; a < staticKeys.length; a++) {
-    if (!builtInStatics.includes(staticKeys[a]) && (!blockList || !blockList.includes(staticKeys[a])) && WrapperClass[staticKeys[a]] === undefined) {
+    if (builtInStatics.indexOf(staticKeys[a]) < 0 && (!blockList || blockList.indexOf(staticKeys[a]) < 0) && WrapperClass[staticKeys[a]] === undefined) {
       WrapperClass[staticKeys[a]] = WrappedClass[staticKeys[a]];
     }
   }
