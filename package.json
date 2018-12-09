@@ -1,6 +1,6 @@
 {
   "name": "redefine-statics-js",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Utility function that copies-over all static methods of a child object to the parent object.",
   "main": "lib/index.js",
   "files": [
